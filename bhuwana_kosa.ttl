@@ -1,0 +1,597 @@
+@prefix bk: <http://contoh.org/bhuwanakosa#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/title
+dct:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://contoh.org/bhuwanakosa#memilikiBab
+bk:memilikiBab rdf:type owl:ObjectProperty ;
+               rdfs:domain bk:BhuwanaKosa ;
+               rdfs:range bk:Bab ;
+               rdfs:label "Memiliki Bab" .
+
+
+###  http://contoh.org/bhuwanakosa#memilikiKlausa
+bk:memilikiKlausa rdf:type owl:ObjectProperty ;
+                  rdfs:domain bk:Bab ;
+                  rdfs:range bk:Klausa ;
+                  rdfs:label "Memiliki Klausa" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://contoh.org/bhuwanakosa#aksaraDevanagari
+bk:aksaraDevanagari rdf:type owl:DatatypeProperty ;
+                    rdfs:domain bk:Klausa ;
+                    rdfs:range rdfs:Literal ;
+                    rdfs:label "Aksara Devanagari" .
+
+
+###  http://contoh.org/bhuwanakosa#judulBab
+bk:judulBab rdf:type owl:DatatypeProperty ;
+            rdfs:domain bk:Bab ;
+            rdfs:range rdfs:Literal ;
+            rdfs:label "Judul Bab" .
+
+
+###  http://contoh.org/bhuwanakosa#nomorBab
+bk:nomorBab rdf:type owl:DatatypeProperty ;
+            rdfs:domain bk:Bab ;
+            rdfs:range xsd:integer ;
+            rdfs:label "Nomor Bab" .
+
+
+###  http://contoh.org/bhuwanakosa#nomorKlausa
+bk:nomorKlausa rdf:type owl:DatatypeProperty ;
+               rdfs:domain bk:Klausa ;
+               rdfs:range xsd:integer ;
+               rdfs:label "Nomor Klausa" .
+
+
+###  http://contoh.org/bhuwanakosa#terjemahan
+bk:terjemahan rdf:type owl:DatatypeProperty ;
+              rdfs:domain bk:Klausa ;
+              rdfs:range rdfs:Literal ;
+              rdfs:label "Terjemahan" .
+
+
+###  http://contoh.org/bhuwanakosa#terjemahanJudul
+bk:terjemahanJudul rdf:type owl:DatatypeProperty ;
+                   rdfs:domain bk:Bab ;
+                   rdfs:range rdfs:Literal ;
+                   rdfs:label "Terjemahan Judul" .
+
+
+###  http://contoh.org/bhuwanakosa#transliterasiLatin
+bk:transliterasiLatin rdf:type owl:DatatypeProperty ;
+                      rdfs:domain bk:Klausa ;
+                      rdfs:range rdfs:Literal ;
+                      rdfs:label "Transliterasi Latin" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://contoh.org/bhuwanakosa#Bab
+bk:Bab rdf:type owl:Class ;
+       rdfs:subClassOf bk:BhuwanaKosa ;
+       rdfs:label "Bab" .
+
+
+###  http://contoh.org/bhuwanakosa#BhuwanaKosa
+bk:BhuwanaKosa rdf:type owl:Class ;
+               rdfs:label "Bhuwana Kosa" .
+
+
+###  http://contoh.org/bhuwanakosa#Klausa
+bk:Klausa rdf:type owl:Class ;
+          rdfs:subClassOf bk:Bab ;
+          rdfs:label "Klausa" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://contoh.org/bhuwanakosa#Bab1
+bk:Bab1 rdf:type owl:NamedIndividual ,
+                 bk:Bab ;
+        bk:memilikiKlausa bk:Kl1_1 ,
+                          bk:Kl1_10 ,
+                          bk:Kl1_11 ,
+                          bk:Kl1_12 ,
+                          bk:Kl1_13 ,
+                          bk:Kl1_14 ,
+                          bk:Kl1_15 ,
+                          bk:Kl1_16 ,
+                          bk:Kl1_17 ,
+                          bk:Kl1_18 ,
+                          bk:Kl1_19 ,
+                          bk:Kl1_2 ,
+                          bk:Kl1_20 ,
+                          bk:Kl1_21 ,
+                          bk:Kl1_22 ,
+                          bk:Kl1_23 ,
+                          bk:Kl1_24 ,
+                          bk:Kl1_25 ,
+                          bk:Kl1_26 ,
+                          bk:Kl1_27 ,
+                          bk:Kl1_28 ,
+                          bk:Kl1_29 ,
+                          bk:Kl1_3 ,
+                          bk:Kl1_30 ,
+                          bk:Kl1_31 ,
+                          bk:Kl1_32 ,
+                          bk:Kl1_33 ,
+                          bk:Kl1_4 ,
+                          bk:Kl1_5 ,
+                          bk:Kl1_6 ,
+                          bk:Kl1_7 ,
+                          bk:Kl1_8 ,
+                          bk:Kl1_9 ;
+        bk:judulBab "Iti Bràhmà Rahasyaý, Pratamah Patalah" ;
+        bk:nomorBab 1 ;
+        bk:terjemahanJudul "Ini Rahasia Bràhmà, Bab I" .
+
+
+###  http://contoh.org/bhuwanakosa#Bab2
+bk:Bab2 rdf:type owl:NamedIndividual ,
+                 bk:Bab ;
+        bk:memilikiKlausa bk:Kl2_1 ,
+                          bk:Kl2_2 ,
+                          bk:Kl2_3 ,
+                          bk:Kl2_4 ,
+                          bk:Kl2_5 ,
+                          bk:Kl2_6 ,
+                          bk:Kl2_7 ,
+                          bk:Kl2_8 ,  # Tambahan
+                          bk:Kl2_9 ,  # Tambahan
+                          bk:Kl2_10 , # Tambahan
+                          bk:Kl2_11 , # Tambahan
+                          bk:Kl2_12 , # Tambahan
+                          bk:Kl2_13 ; # Tambahan
+        bk:judulBab "Bràhmà Rahasyaý, Dwitiyah Patalah" ;
+        bk:nomorBab 2 ;
+        bk:terjemahanJudul "Rahasia Bràhmà, Bab II" .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_1
+bk:Kl1_1 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "अविघ्नमस्तु। ससंग्रह कारि सिर मवुवुस्, लिङ् निर। प्रणम्य शिरःश देव, वाक्यमुनि रम नाथ, देव देव महादेव, परमेश्वर शङ्कर। ऋषिमुनि भार्गव, सिर मह्युन तुमक्वनकेन् इकं पद निर्वाण रिङ् भटार, मङ्कन प्व भिप्रयनिर, मनम्भ त सिर रिङ् भटार, शिरःश, म क कारण हुलुनिर सिर, रि तेलस निर मनम्भ, मोजर त सिर। हे, देव देव, किता देवनिङ् देवत कभ, हे महादेव, किता भटार महादेव ङरन्त, हे महेश्वर, किता भटार महेश्वर ङरन्त, हे शङ्कर, किता भटार शङ्कर ङरन्त।" ;
+         bk:nomorKlausa 1 ;
+         bk:terjemahan "Ṛṣimuni Bhārgawa, beliau ingin menanyakan apa yang disebut alam Nirbāṇa kepada Bhaṭāra. Demikianlah maksudnya, maka beliau menyembah Bhaṭāra Śiraḥśa, dengan menundukkan kepala kepada Beliau. Setelah selesai menyembah lalu berkatalah beliau: Hai Tuan para dewa, Tuan Dewa dari semua dewa, Tuan bergelar Mahādewa, Tuan bergelar Sang Hyang Maheśwara, Tuan bergelar Sang Hyang Śaṅkara." ;
+         bk:transliterasiLatin "awighnamastu. sasaṅgraha kāri sira mawuwus, liṅ nira. praṇamya śiraḥśa dewa, vākyamuni rama nātha, dewa dewa mahādewa, parameśwara śaṅkara. ṛṣimuni bhārgawa, sira mahyun tumakwanakên ikaṅ pada nirbāṇa ri bhaṭāra, maṅkana pwa bhiprayanira, manambah ta sira ri bhaṭāra, śiraḥśa, maka kāraṇa hulunira sira, ri têlas nira manambah, mojar ta sira. he, dewa dewa, kita dewaning dewata kabeh, he mahādewa, kita bhaṭāra mahādewa ngaranta, he maheśwara, kita bhaṭāra maheśwara ngaranta, he śaṅkara, kita bhaṭāra śaṅkara ngaranta." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_10
+bk:Kl1_10 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "अचलञ्चलयेत् सर्व्वम्, जगत् स्थावर जङ्गनम्, व्यपि हित्यम् भवो विर, दुर्ज्ञे यो ज्ञ न वर्ज्जितः। ल्विर् भटार शिव हने रि य, व्यापक नित्य, मेङेत् सिर तन् चल, मेवेह् सिर कव्रुहन देनिङ् हीन ज्ञान, सिर तमर् चल इरिकङ् जगत् कभेह्, स्थावर जङ्गमावक्न्य।" ;
+          bk:nomorKlausa 10 ;
+          bk:terjemahan "Prihal Sang Hyang Úiwa ada di sana, selalu menyusupi segala. Selalu Sadar dan tak bergerak. Sulit diketahui oleh orang yang sedikit pengetahuan sucinya. Beliau tidak bergerak di semua alam. Tumbuh-tumbuhan, maupun binatang adalah wujud-Nya." ;
+          bk:transliterasiLatin "acalañcalayet sarwwam, jagat ûþhàwara jangganam, wyapi hityam bhawo wira, durjñe yojña na warjjitah. lwir bhaþàra úiwa hane ri ya, wyàpaka nitya, mengêt sira tan cala, mewêh sira kawruhana dening hìna jñàna, sira tamar cala irikang jagat kabeh, ûþhàwara janggamàwaknya." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_11
+bk:Kl1_11 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "ज्ञानवादि महादेवः, हृदयान्त रि सङ्ष्ठितः, नित्य दृष्टो महासङ्ख्यम्, देहि त्वम् अन्त रिक्ष्वावात्। भटार महादेव, सिर त नित्योमुङ्गुह् इ तुम्पुकनिङ् हति, ङ्कानेङ् सर्व्व मावक्, तर् कतहनन्, कद्याकाश ल्विर्निर, सिर त कतोन् दे सङ् व्रुह् रिङ् ज्ञान।" ;
+          bk:nomorKlausa 11 ;
+          bk:terjemahan "Sang Hyang Mahàdewa, Beliau selalu bersemayam pada tumpukan hati, di sana di dalam semua mahluk. Tak diketahui. Seperti angkasa prihal-Nya. Beliau itulah yang dilihat oleh orang yang berilmu pengetahuan suci (jñàna)." ;
+          bk:transliterasiLatin "jñànawàdi mahàdewah, hrêdayànta ri sangûþhitah, nitya drêûþo mahàsangkyam, dehi twam anta rikûwawàt. bhaþàra mahàdewa, sira ta nityomungguh i tumpukaning hati, ngkàneng sarwwa màwak, tar katahanan, kadyàkàúa lwirnira, sira ta katon de sang wruh ring jñàna." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_12
+bk:Kl1_12 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "दश नप्यार्क करस्य, हृदयन् धनि निस्मृतम्, शरिरे विततः सर्व्वे, जगत्यर्कस्य रश्मिवत्। इक तङ् पद नपि, यत अलिवत् सङ्करि हति निङ् मशरिर, पेनुह् इङ् रात् कभेह्, कदि तेज निङ् आदित्य ल्विर्न्य।" ;
+          bk:nomorKlausa 12 ;
+          bk:terjemahan "Alam Napi itu melewati hati semua mahluk, memenuhi seluruh dunia, seperti sinar matahari keadaannya." ;
+          bk:transliterasiLatin "daúa napyàrka karasya, hrêdayan dhani nismrêtam, úarire witatah sarwwe, jagatyarkasya raúmiwat. ika tang pada napi, yata aliwat sangkari hati ning maúarira, pênuh ing ràt kabeh, kadi teja ning aditya lwirnya." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_13
+bk:Kl1_13 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "मलति नाम नापिच, अष्ट सतञ्चि रेरुहे, तिर्यगे वेसनम् भयव, दत्य तुष्टि महेश्वरः। हन त नापि मलती, ङ, वलुङतुस् अगेङ्न्य सङ्केङ् रम्बुत् तेकेङ् तुम्पुकनिङ् हति, मक हिङ्घन् इङ् नाभि, इका तङ् नापि मङ्कन, य तमर् सुक भटार परमेश्वर।" ;
+          bk:nomorKlausa 13 ;
+          bk:terjemahan "Ada yang bernama Napi Malati, besarnya delapan ratus dari rambut sampai pada tumpukan hati berakhir pada pusar. (Akan tetapi) Napi yang demikian itu tidak menyenangkan Sang Hyang Parameúwara." ;
+          bk:transliterasiLatin "malati nàma nàpica, aûþa satanci reruhe, tiryage wesanam bhyawa, datya tuûþimaheúwarah. hana ta nàpi malatì, nga, walungatus agêngnya sangkeng rambut têkeng tumpukaning hati, maka hinghan ing nàbhi, ikà tang nàpi mangkana, ya tamar suka bhaþàra parameúwara." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_14
+bk:Kl1_14 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "नलरेतक सञ्ज्ञश्च, नापि तृष्ण हिम प्राणः, द्वि विधत प्रमाणस्यत्, हृदये मूर्द्ध भिन्नतः। म्वङ् हन त नापि वनेह्, नलरेतक, ङ, कदि तेज निङ् मेग हिरेङ् तेजन्य, रवङ् किलन् कलिङ्किङ्ङन् दवन्य, य त तेकेङ् कपाल, अन् सङ्केङ् हति।" ;
+          bk:nomorKlausa 14 ;
+          bk:terjemahan "Dan lagi ada Napi yang lain bernama Nalaretaka, cahanya seperti mendung hitam, panjangnya dua jengkal kelingking, dari hati sampai di kepala." ;
+          bk:transliterasiLatin "nalaretaka sangjñaúca, nàpi trêûóa hima praóah, dwi widhata pramaóasyat, hrêdaye mùrddha bhinnatah. mwang hana ta nàpi waneh, nalaretaka, nga, kadi teja ning mega hirêng tejanya, rwang kilan kalingkingan dawanya, ya ta têkeng kapala, an sangkeng hati." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_15
+bk:Kl1_15 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "पुरस्तात् सम्प्रवक्ष्यामि, नापि नामिति मूलतम्, ऐतेषम् द्विज राजेन्द्र, तभ्यम् सर्व्व मशेषतः। निहन् वरहक्न रुमुहुन् इ कित द्विजेंद्र, तर् पशेष देन् क्वमरहकेन् इके।" ;
+          bk:nomorKlausa 15 ;
+          bk:terjemahan "Inilah yang Aku ajarkan terlebih dahulu kepadamu raja pendeta. Tidak ada yang tertinggal oleh-Ku dalam menjelaskan itu." ;
+          bk:transliterasiLatin "puraûþat samprawakûyami, nàpi nàmiti mùlatam, aiteûam dwija ràjendra, tabhyam sarwwa maúeûatah. nihan warahakna rumuhun i kita dwijendra, tar paúeûa den kwamarahakên ike." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_16
+bk:Kl1_16 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "इधनम् सम्प्रवक्ष्यामि, हृदयान्ते विधानकम्, प्रयत्न द्विज राजेन्द्र, शृणु गर्भम् हृदि स्थितम्। हन त युक्ति गवयक्न सङ् पण्डित, य त वरहक्न मङ्के भटार पिनकेसिनि हतिन्त, प्रयत्न त कित द्विज राजेन्द्र।" ;
+          bk:nomorKlausa 16 ;
+          bk:terjemahan "Ada hal yang patut dilaksanakan oleh sang pendeta. Itulah yang Aku jelaskan sekarang. Bhaþàra merupakan isi hatimu. Waspadalah wahai raja pendeta." ;
+          bk:transliterasiLatin "idhànam samprawàkûyami, hrêdayànte widhànakam, prayatna dwija ràjendra, srêóu garbbham hrêdi ûþhitam. hana ta yukti gawayakna sang paóðita, ya ta warahakna mangke bhaþàra pinakesini hatinta, prayatna ta kita dwija ràjendra." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_17
+bk:Kl1_17 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "हृदन्ते सुमिरे वीर, पञ्च वर्णमतः प्रभम्, रक्त त्रि वर्णमासितम्, दीप्तम् स्फटैक सन्निभम्। हन वर्ण लिम क्वेह्न्य, अतिशय तेजान्य, मुङ्ग्व इ तुम्पुक्निङ् हति, मलि्लङ् त य, ल्विर्न्य, इकङ् रक्त, अघोर, इकङ् त्रि वर्ण, बाङ्, पुतिह्, कृष्ण य तत्पुरुष, इकङ् हिरेङ् पढ लावन् निलान्जन, य सद्य, इकङ् कदि तेज निङ् आदित्य, य भामदेव, इकङ् कदि मणिक् स्फटिक, य ईशान, नाहन् क्रमन्य, कव्रुहन त कितङ् वीर।" ;
+          bk:nomorKlausa 17 ;
+          bk:terjemahan "Ada lima jenis warna, sangat luar biasa cahayanya, bertempat pada tumpukan hati. Itu bercahaya terang. Perinciannya sebagai berikut. Merah, Aghora dewanya. Itu yang tiga warna, yaitu merah, putih, dan hitam, Tatpuruûa dewanya. Itu yang hitam seperti celak mata, Sadya dewanya. Warna yang seperti sinar matahari, Bhàmadewa dewanya. Itu yang seperti permata batu kristal, Ìúana dewanya. Demikian penjelasannya. Ketahuilah itu, hai pemberani." ;
+          bk:transliterasiLatin "hrêdante sumire wìra, pañca warónamatah prabham, rakta tri warónamàsitam, diptam spaþáika sannibham. hana waróna lima kwehnya, atiúaya tejanya, munggw i tumpukning hati, malilang ta ya, lwirnya, ikang ràkta, aghora, ikang tri waróna, bàng, putih, krêûóa ya tatpuruûa, ikang hirêng padha làwan nilàñjana, ya sadya, ikang kadi teja ning aditya, ya bhàmadewa, ikang kadi maóik spaþhika, ya ìúana, nàhan kramanya, kawruhana ta kitang wìra." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_18
+bk:Kl1_18 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "स्वच्छम् सूक्ष्मम् परम् शून्यम्, शिवाङ्ग केवल्यम् अच्युतम्, अनामयम् अनिधनम्, हनादि मध्यमान्तिकम्। हन त पद सून्य, मलि्लङ् त य, विशेष इक, मलित् य परम सूक्ष्म, य केवल्य, ङ, तर् पकहिलङन्, तन् पादि, तर् पमध्य, तन् पान्त, य कारण निङ् ददि कभेह्, य कालीनन्य।" ;
+          bk:nomorKlausa 18 ;
+          bk:terjemahan "Ada alam Úùnya. Ia itu terang benderang. Itu sangat unggul. Ia sangat halus, dan sangat gaib. Ia bernama Kewalya. Tanpa batas, tanpa awal, tanpa pertengahan, dan tanpa akhir. Ia asal semua makhluk, ke Ia juga lenyapnya." ;
+          bk:transliterasiLatin "swaccham sùkûmam param úùnyam, úiwang kewalyam acyutam, anàmàyàm anidhanam, hanàdi madhyamàntikam. hana ta pada sùnya, malilang ta ya, wiúeûa ika, malit ya parama sùkûma, ya kewalya, nga, tar pakahilangan, tan pàdi, tar pamadhya, tan pànta, ya kàraóa ning dadi kabeh, ya kalìnanya." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_19
+bk:Kl1_19 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "निरञ्जनम् निराकरम्, निर्गत्रेवम् विनिःसृतम्, अष्ट शिवस्य निर्माल्यम्, परन्निर्वाण मव्ययम्। तन् करेकेतन् मल, तर् पल्विर्, तन् पगात्र, व्यापक, योङ्ग्वन् सङ् ह्यङ् अष्टशिव, तर् पचल, विशेष य।" ;
+          bk:nomorKlausa 19 ;
+          bk:terjemahan "Tidak dilekati noda, tanpa bandingan, tanpa rupa, memenuhi. Itu tempat bersemayam Sang Hyang Aûþaúiwa. Tanpa perubahan. Ia unggul." ;
+          bk:transliterasiLatin "nirañjanam nirakaram, nirgatrewam winisrêtam, aûþa úiwasya nirmalyam, parannirbaóa mawyayam. tan karekêtan mala, tar palwir, tan pagàtra, wyàpaka, yonggwan sang hyang aûþaúiwa, tar pacala, wiúesa ya." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_2
+bk:Kl1_2 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "शून्यश्च निर्भानाधिक, शिवाङ्ग त्वे निरीक्श्यते, कुतः तद् वाक्यमतुलम्, शृत्त्वा देव वतिष्ठ। नाहन् त्क्वनक्ननि ङ्हुलुन् रि भटार, हन य पद शून्य, य सिन्‍गुः कामोक्ष, ङ, विशेष य, य शिव ङरण्य। नीरीक्श्यते, कतोन् प्व य दे साङ् योगीश्वर, कुतः देश, न्दि तेक देश कतोनीर, सज्ञ भटार, अन मङ्कन कोत्तमनिङ् वुवुस् साङ् ऋषि, य त कारेङ दे भटार। देव उवच, मोजर भटार, लिङ् निर।" ;
+         bk:nomorKlausa 2 ;
+         bk:terjemahan "Hal inilah yang akan hamba tanyakan kepada-Mu Bhaṭāra. Ada alam Sunyi (Śūnya), itu dikatakan alam Kamokṣaṇa, Ia amat utama, Ia yang disebut Śiwa. Ia dilihat oleh sang yogī agung. Di manakah tempat alam yang dilihat oleh beliau itu, oh Bhaṭāra? Karena demikian utamanya pertanyaan sang pendeta didengar oleh Bhaṭāra, bersabdalah Beliau." ;
+         bk:transliterasiLatin "śūnyaśca nirbhānādhika, śivāṅga tve nirīkṣyate, kutaḥ tad vākyamatulam, śṛtvā dewa vatiṣṭha. nāhan takwanaknani nghulun ri bhaṭāra, hana ya pada śūnya, ya sinangguh kamokṣaṇa, ṅa, viśeṣa ya, ya śiwa ngaraṇya. nirīkṣyate, katon pwa ya de saṅ yogīśwara, kutaḥ deśa, ndi teka deśa katonanira, sajña bhaṭāra, an maṅkana kottamaning wuwus saṅ ṛṣi, ya ta kareṅa de bhaṭāra. dewa uwaca, mojar bhaṭāra, liṅ nira." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_20
+bk:Kl1_20 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "एतत् परम निर्वाणम्, ऐतत् केवल शान्तिकम्, परात्मा महादेवम्, परमेश्वर संज्ञकम्। इकङ् पद मङ्कन, य परमनिरबाण, य केवल्य पद, य परात्मा, य महादेव, य परमेश्वर ङरनिर।" ;
+          bk:nomorKlausa 20 ;
+          bk:terjemahan "Alam yang demikian, disebut Paramanirbaóa. Ia alam Kaiwalya. Ia Paràtmà. Ia Mahàdewa, dan Parameúwara nama-Nya." ;
+          bk:transliterasiLatin "etat parama nirbàóam, aitat kewala úantikam, paràtmà mahàdewam, parameúwara sangjñakam. ikang pada mangkana, ya paramanirbaóa, ya kewalya pada, ya paràtmà, ya mahàdewa, ya parameúwara ngaranira." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_21
+bk:Kl1_21 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "शिव परम्ब्रह्मा मुनिः, प्रोक्तोत्तमाख्य तल्लभेत, ध्यात्वा महाप्रयत्नेक, हृदन्तेच ललातक। हन त शिव पद, ङ, परम्ब्रह्मा, ङ, य तङ्ङेन् अङ्ङेन् सङ् विकु, मक कारण ङ् मनह्निर, पिन्ग्गुह् निर प्वय, ङ्क रि तुम्पुक् निङ् हति, यत्न त सिर।" ;
+          bk:nomorKlausa 21 ;
+          bk:terjemahan "Ada yang disebut alam Úiwa, juga disebut Parambràhmà. Ialah patut menjadi renungan sang pendeta dengan sarana pikirannya, maka dijumpainyalah Ia, di sana pada tumpukan hati. Waspadalah kamu." ;
+          bk:transliterasiLatin "úiwa parambràhmà munih, proktottamàkya tallabhet, dhyatwa mahàprayatneka, hrêdanteca lalataka. hana ta úiwa pada, nga, parambràhmà, nga, ya tàngên angên sang wiku, maka kàraóa ng manahnira, pinangguh nira pwaya, ngka ri tumpuk ning hati, yatna ta sira." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_22
+bk:Kl1_22 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "मूर्ध्नि मेवपि मुनिः, प्रविशेत् शिव मुत्तमम्, प्रणष्ट क्रमते वीर, यत्नतः सम्प्रतिष्ठति। ङ्कान र्युङ्ग्वनिरङ्ङेन्-अङ्ङेनेनिर य, माति प्व सङ् विकु, मन्तुक् त सिर रि पद भटार शिव, सयोग्य त सिर लावन् भटार शिव, मक निमित्तङ् यत्न निर, मङ्कन वुवुस्कवि कितङ् वीर।" ;
+          bk:nomorKlausa 22 ;
+          bk:terjemahan "Di sana pada tempat-Nya (selalu) Ia direnungkannya. Lalu sang pendeta meninggal. Kembalilah beliau ke alam Bhaþàra Úiwa. Menunggallah beliau dengan Sang Hyang Úiwa oleh karena kehati-hatiannya. Demikian penjelasan-Ku kepadamu, hai pemberani." ;
+          bk:transliterasiLatin "mùrddhini mewàpi munih, prawiset úiwa muttamam, pranaûþa kramate wìra, yatnatah sampratiûþati. ngkàna ryunggwaniràngên-angênênira ya, màti pwa sang wiku, mantuk ta sira ri pada bhaþàra úiwa, sayojya ta sira làwan bhaþàra úiwa, maka nimittang yatna nira, mangkana wuwuskwi kitang wìra." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_23
+bk:Kl1_23 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "विश्वास्थारुण ता प्रभम्, पद्मराग सम प्रभम्, व्याप्तिनम् तेज बायुनम्, आन्तरे मानसोन्तरे। प्रदीप्तादित्य सङ्काशः, ज्योति ज्वालित पिङ्गलम्, मान सेव विजान्यत्, विश्वदेवम् प्रतिष्ठनम्। हन त पदाबङ्, कदि तम्बगेनापि ल्विर्न्य, पद तेजान्य लावन् मणि पद्मराग कद्यादित्य वहु मेतु, म्वङ् कदि तेज निङ् अपुय्, विश्वदेव ह्यङ्न्य, मुङ्ग्व इ हति, अघोर विज ङ्कान, ओङ् अङ् नमः, य त कव्रुहन सङ् विकु, रिङ् आकाश, र्यान्तर निङ् मनः, मक कारण ङ् मनः निर।" ;
+          bk:nomorKlausa 23 ;
+          bk:terjemahan "Ada lagi alam merah seperti tembaga yang baru habis dibersihkan. Sinarnya sama seperti permata mirah. Seperti matahari baru terbit, seperti cahaya api. Dewanya bergelar Wiúwadewa. Bersemayam pada hati, inti mantranya Aghora, aksara sucinya Ong Ang namah. Itu patut diketahui oleh sang pendeta di angkasa, di antara pikiran, dengan bersaranakan pikirannya." ;
+          bk:transliterasiLatin "wiúwàûþhàruóa tà pràbham, padmaràga sama pràbham, wyaptinam teja bàyunam, àntare mànasontare. pradiptàditya sangkàúah, jyoti jwàlita pinggalam, màna sewa wìjànyat, wiúwadewam pratiûþanam. hana ta padàbàng, kadi tambagenapi lwirnya, paða tejanya làwan maói padmaràga kadyàditya wahu mêtu, mwang kadi teja ning apuy, wiúwadewa hyangnya, munggw i hati, aghora wìja ngkàna, ong ang namah, ya ta kawruhana sang wiku, ring àkaúa, ryàntara ning manah, maka kàraóa ng manah nira." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_24
+bk:Kl1_24 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "तदान्तरि त्रि वर्णस्य, महेन्द्र धनु सन्निभम्, मात्र तङ्कर त द्विजम्, ऐवन् तत्पुरुषोत्तमम्। हन त्रि वर्ण, बाङ्, पुतिह्, हिरेङ्, तत्पुरुष विज ङ्कान, मुङ्गु रि हति, कदि वङ्कव ल्विर्न्य, महिरेङ्, माबङ्, मपुतिह्, पञ्च तन्मात्र बुद्धि, य त मक पद तत्पुरुष विज ङ्कन, ओङ् तङ् नमः।" ;
+          bk:nomorKlausa 24 ;
+          bk:terjemahan "Ada tiga warna: merah, putih, hitam. Tatpuruûa di sana, bersemayam di hati. Wujudnya seperti pelangi, berwarna hitam, merah, dan putih, Pañca Tanmàtra dan Buddhi. Itu sebagai inti mantra alam Tatpuruûa di sana. Ong Tang namah." ;
+          bk:transliterasiLatin "tadàntari tri warónasya, mahendra dhanu sannibham, màtra tangkara ta dwijam, aiwan tatpurusottamam. hana tri waróna, bàng, putih, hirêng, tatpuruûa wija ngkàna, munggu ri hati, kadi wangkawa lwirnya, mahirêng, màbàng, maputih, pañca tanmàtra buddhi, ya ta maka pada tatpuruûa wija ngkana, ong tang namah." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_25
+bk:Kl1_25 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "सएवम् प्राण उक्तेव, देहम् नाम् ब्रह्मा मन्त्रतम्, असित वर्णमित्युक्तम् निलान्जन सम प्रभम्। इका त विनरहङ्कु, य प्राण निङ् सर्व्व मावक्, य ब्रह्मा मन्त्र, म्वङ् हन त वर्ण महिरेङ्, वैष्णव विज ङ्कान, ओङ् सङ् नमः, पद लावन् निलान्जन तेजान्य।" ;
+          bk:nomorKlausa 25 ;
+          bk:terjemahan "Itulah yang Aku jelaskan. Beliau merupakan nafas vital (pràóa) dari segala yang bertubuh. Beliau juga disebut Mantra Bràhmà. Dan ada lagi warna hitam. Inti mantranya Weûóawa, Ong Sang namah. Cahayanya sama dengan tinta hitam." ;
+          bk:transliterasiLatin "saewam pràóa uktewa, deham nàm bràhmà mantratam, asita warónam ityuktam nilàñjana sama prabham. ikà ta winarahangku, ya pràóa ning sarwwa màwak, ya bràhma mantra, mwang hana ta waróna mahirêng, weûóawa wija ngkàna, ong sang namah, paða làwan nilàñjana tejanya." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_26
+bk:Kl1_26 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "तदान्ते परि सङ्गुष्ठः, विष्णु वाक्तर मुच्यते, तस्यान्तरे प्रभा मात्रम्, सूर्यायुत सम प्रभः। इकङ् अव्यक्त विष्णु य, मिजिल् सङ्केङ् वित्निङ् हति, रि तेङ्ङनिङ् हति हन त प्रभा पद लावन् सूर्य शयुत तेजान्य, भामदेव विज ङ्कान, ओङ् बङ् नमः।" ;
+          bk:nomorKlausa 26 ;
+          bk:terjemahan "Abyakta itu disebut Wiûóu. Keluar dari pangkal hati, di tengah-tengah hati ada sinar yang sama dengan sinar sejuta matahari. Inti mantranya Bhàmadewa di sana, Ong Bang namah." ;
+          bk:transliterasiLatin "tadànte pari sangûrêûþah, wiûóu wàktara mucyate, tasyàntare prabhà màtram, sùryyàyuta sama pràbhah. ikang abyakta wiûóu ya, mijil sangkeng witning hati, ri têngahning hati hana ta pràbha paða làwan sùryya úayuta tejanya, bhàmadewa wija ngkàna, ong bang namah." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_27
+bk:Kl1_27 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "पुरुषो वै महाब्रह्मा, महाद्युति-रणोपमः, अस्फटिकस्य महासूक्ष्मः, ईश्वर विज संज्ञकः। सङ् ह्यङ् ब्रह्मा, आत्मा सिर, अतिशय क्वेह्निङ् तेजनिर, पद सिर लावन् तेजनीङ् मणिक् स्फटिक, ब्रह्मा विज ङ्कान, ओङ् इन् नमः, महासूक्ष्म सिर, सिर ईश्वर, ङ।" ;
+          bk:nomorKlausa 27 ;
+          bk:terjemahan "Sang Hyang Bràhmà adalah Àtmà. Sinar Beliau sangat banyak. Sinarnya sama dengan sinar permata kristal. Inti mantranya Bràhmà di sana, Ong Ing namah. Beliau sangat gaib. Ìúwara namanya." ;
+          bk:transliterasiLatin "puruûo wai mahàbràhmà, mahàdyuti-ranopamah, aphaþikasya mahàsùksmah, ìúwara wija sajñakah. sang hyang bràhmà, àtmà sira, atiúaya kwehning tejanira, paða sira làwan tejaning maóik sphatika, bràhmà wija ngkàna, ong ing namah, mahàsùkûma sira, sira ìúwara, nga." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_28
+bk:Kl1_28 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "परम्ब्रह्मा महासूक्ष्मम्, शान्तम् परमनिरम्मलम्, वयव मात्र सान्यस्य, अङ्गुष्ठ परिमाणतः। हन त परम्ब्रह्मा, ङ, सिर महासूक्ष्म, शान्त परमनिरम्मल सिर सवयव प्रमाण सङ्करिङ् अङ्गुष्ठ।" ;
+          bk:nomorKlausa 28 ;
+          bk:terjemahan "Ada yang disebut Parambràhmà. Beliau sangat gaib. Beliau tenang, sangat suci. Wujudnya sebesar ibu jari." ;
+          bk:transliterasiLatin "parambràhmà mahàsùkûmam, úàntam paramanirmmalam, wayawa màtra sànyasya, angguûþa parimàóatah. hana ta parambràhmà, nga, sira mahàsùkûma, úanta paramanirmmala sira sawayawa pramàóa sangkaring angguûþa." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_29
+bk:Kl1_29 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "तत्राशून्यम् सद्ज्ञेयम्, शिव निर्म्मल संज्ञिकम्, तथाक्षर समारब्धम्, निराक्षर मनामयम्। ल्विर्निङ् पद ङ्केङ् शरीर, अत्यन्तेवेह्निङ् कव्रुहन्य, मलि्लङ् त य, तर् पकहिलङन् गिनवे देनिङ् अक्षर, न्दन् कग्रहितन्य निराक्षर य, अपन् कसुरुदन् सुक दुह्क।" ;
+          bk:nomorKlausa 29 ;
+          bk:terjemahan "Prihal jenis-jenis alam yang ada pada diri, sangat sulit untuk mengetahuinya. Beliau itu terang benderang. Tidak habis-habisnya bila dikaji dengan aksara. Dan untuk memahaminya adalah dengan nir-aksara, karena luput dari suka dan duka." ;
+          bk:transliterasiLatin "tàtràúùnyam sadjñeyam, úiwa nirmmala sangjñikam, tathàkûara samàrabdham, niràkûara manàmàyàm. lwirning pada ngkeng úarìra, atyantewêhning kawruhanya, malilang ta ya, tar pakahilangan ginawe dening aksara, ndan kagrahitanya nirakûara ya, apan kasurudan suka duhka." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_3
+bk:Kl1_3 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "स्वशरिरे महायोगि, पश्यते हृदयन्तरे, वाक्यन्ते परमेशनम्, सूर्य युतम मप्रभम्। निहन् वुवुस् नि ङ्हुलुन् इ कित सङ् महायोगि, सिर तुमोन भटार परमेश्वर, सतेज लावन् तेज निङ् आदित्य सयुत, ङ्क रि शरिर निर म्वङ् रि हति निर।" ;
+         bk:nomorKlausa 3 ;
+         bk:terjemahan "Begini penjelasan-Ku kepadamu sang mahayogi. Beliau melihat Bhaþàra Parameúwara, secahaya dengan sejuta cahaya matahari, di sana dalam dirinya dan dalam hatinya." ;
+         bk:transliterasiLatin "swaúarire mahàyogi, pasyate hrêdayantare, wakyante parameúanam, suryya yutama maprabham. nihan wuwus ni nghulun i kita sang mahàyogi, sira tumon bhaþàra parameúwara, sateja làwan teja ning aditya sayuta, ngka ri úarira nira mwang ri hati nira." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_30
+bk:Kl1_30 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "विविधात्व महादेवः, ध्यातव्यः मुनि सत्तमः, शान्त शून्य मनोपम्यम्, मोक्षम् शिव परम्ब्रजेत्। सिर त भटार महादेव, सिर कव्रुहन दे सङ् विकु, समङ्कन वुवुसनि ङ्हुलुन् इ कित ङ् वीर, विशेषाङ्ङेन् अङ्ङेन् प्व सिर, मन्तुक् प्व सिर रिङ् शिव पद, ल्विर्न्य, शून्य शान्त तन् पपद रिङ् विशेष, य कामोक्षन्, ङ।" ;
+          bk:nomorKlausa 30 ;
+          bk:terjemahan "Sang Hyang Mahàdewa hendaknya dipahami oleh sang pendeta. Demikian ajaran-Ku kepadamu, hai pahlawan. Beliau yang renungannya sempurna, kembalilah beliau ke alam Úiwa. Prihalnya Sunyi Damai. Kesempurnaan yang tiada tara. Ia disebut Kamokûan." ;
+          bk:transliterasiLatin "wiwidhàtwa mahàdewah, dhyatawyah muni sattamah, úànta úùnya manopamyam, mokûam úiwa parambrajet. sira ta bhaþàra mahàdewa, sira kawruhana de sang wiku, samangkana wuwusani nghulun i kita ng wira, wiúeûàngên angên pwa sira, mantuk pwa sira ring úiwa pada, lwirnya, úùnya úànta tan papaða ring wiúeûa, ya kamokûan, nga." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_31
+bk:Kl1_31 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "दिने दिने महायोगि, स्वात्मकम् उपपाद्यते, सर्व्व पाप न देहेस्मिन्, दहेत् काष्ठमिवानलः। देयनिर सङ् योगीश्वर, पतेम्वक्न जुगावक्निर लावन् भटार सरि-सरि, मङ्कन प्व सिर, गिनेसेङ्ङनिर त पापानिर कभेह्, ङ्कानेङ् शरीरनिर, कद्यङ्गा निङ् अपुय् मङ्गेसेङ् इ कयु-कयु।" ;
+          bk:nomorKlausa 31 ;
+          bk:terjemahan "Usaha beliau, hai sang yogi agung, beliau selalu berusaha menyatukan dirinya dengan Bhaþàra. Demikianlah beliau. Dibasminya segala dosanya, di sana pada dirinya. Bagaikan api membakar kayu-kayuan." ;
+          bk:transliterasiLatin "dine dine mahàyogi, swàtmàkam upapàdyate, sarwwa papa na dehesmin, dahet kaûþamiwonalah. deyanira sang yogiúwara, patêmwakna jugàwaknira làwan bhaþàra sari-sari, mangkana pwa sira, ginêsênganira ta papànira kabeh, ngkàneng úarìranira, kadyangga ning apuy manggêsêng i kayu-kayu." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_32
+bk:Kl1_32 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "यदि पापा सहस्राणाम्, काष्ठमिवाग्नि न दहेत्, स्वदेहे स्वम्यम् अगच्छ, व्रजेन् मोक्षन् शिवात्मकम्। सङ् योगीश्वर सिर तुमन्व् इकङ् पाप सेवु, काङ्केन कयु इक, मक कारणङ् ज्ञान विशेष, यान्केन् अपुय्, तेलस् प्व सिरन् तुमन्वी रि य, कपङ्गुह् तङ् केश्वर्यन् दे निर, तर् पशेष प्व देनिर, कपङ्गुह् तङ् कामोक्षन् गिनव्यकेन् ल्विर् निर।" ;
+          bk:nomorKlausa 32 ;
+          bk:terjemahan "Orang yang sempurna yoganya, beliau membasmi seribu dosanya yang bagaikan kayu api itu, dengan ilmu pengetahuan suci yang ibarat api. Setelah selesai membasminya, ditemukanlah kekuatan supra itu olehnya. Tanpa ada sisa (dosa) olehnya. Dicapailah Kamokûan yang diusahakannya." ;
+          bk:transliterasiLatin "yadi papà sàhasraóam, kaûþamiwàgni na dahet, swadehe swamyam agaccha, wrajen mokûan úiwàtmàkam. sang yogiúwara sira tumunw ikang pàpa sewu, kàngkên kayu ika, maka kàraóang jñàna wiúesa, yànken apuy, têlas pwa siran tumunwì ri ya, kapangguh tang keúwaryyan de nira, tar paúeûa pwa denira, kapangguh tang kamokûan ginawyakên lwir nira." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_33
+bk:Kl1_33 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:aksaraDevanagari "ऐश्वर्य वृद्धिम् अधिकम्, सर्व्व भूताव शङ्करम्, लाभ्यते मुनि रत्यन्तम्, मोक्षम् परमदुर्लभम्। पिनङ्गुह् सङ् विकु इकङ् केश्वर्यन्, वृद्धि य, विशेष कुमवसकेन् सर्व्व भूत गवयन्य, यात्यन्त कामोक्षन्, ङ, अतिशय रिङ् मेवेह्। इति भुवन सनिद्ध्य नम शास्त्रम्, ब्रह्मा रहस्यम् प्रतमन पटलः।" ;
+          bk:nomorKlausa 33 ;
+          bk:terjemahan """Dengan ditemukan kekuatan supra itu oleh sang pendeta, maka makmurlah beliau. Unggul, berusaha menguasai semua elemen material (sarwa bhùta) dikerjakannya. Itulah yang dimaksud Kamokûan. Tetapi sangat sulit. 
+[Ini pengetahuan suci Bhuwana Saniddhya (alam yang berada dekat dalam diri). Rahasia Bràhmà Bab Pertama].""" ;
+          bk:transliterasiLatin """aiúwaryya wrêddhim àdhikam, sarwwa bhùtawa úangkaram, làbhyate munir atyantam, mokûam paramadurllabham. pinangguh sang wiku ikang keúwaryyan, wrêddhi ya, wiúeûa kumawasakên sarwwa bhùta gawayanya, yàtyanta kamokûan, nga, atiúaya ring mewêh. 
+iti bhuwana saniddhya nama úàûþram, bràhmà rahasyam prataman paþalah.""" .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_4
+bk:Kl1_4 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "हृदिष्ठम् सर्व्व भुतनम्, पश्यते जलचक्र वत्, अनादि मध्यनि धनम्, शिवाङ्गाध्य नमो मृतम्। ल्विर् भटार शिव, सिर हुमुङ्गु रिङ् हति निङ् सर्व्व मावक्, तर्पादि, तर् पमध्य, तर् पान्त, लङ्गेङ् हन निर, कदि जल चक्र रूपनिर, सिर त कतोन् दे सङ् योगीश्वर।" ;
+         bk:nomorKlausa 4 ;
+         bk:terjemahan "Adapun Sang Hyang Úiwa, Beliau bersemayam di hati semua makhluk. Tanpa awal, tanpa pertengahan, dan tanpa akhir. Keberadaan-Nya abadi. Seperti pusaran air rupa Beliau. Beliau dilihat oleh sang yogi agung." ;
+         bk:transliterasiLatin "hrêdiûþam sarwwa bhutanam, pasyate jalacakra wat, anadi madhyani dhanam, úiwanggadhya namo mrêtam. lwir bhaþàra úiwa, sira humunggu ring hati ning sarwwa màwak, tarpàdi, tar pamadhya, tar pànta, langgêng hana nira, kadi jala cakra rùpanira, sira ta katon de sang yogìúwara." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_5
+bk:Kl1_5 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "मनस्य दर्श्यते विर, अमिभूते न चक्षुषो, हृदि ष्ठनेल देवि, मूर्द्धन्त रि निरीक्ष्यते। इक तङ् पद मङ्कन, यत कतोन् देन्त, मक कारण मनह्त, म्वङ् ज्ञानन्त जितेन्द्रिय, ङ्क रि तुम्पुक् इङ् हति, रिङ् रहि तेङह् निङ् हुलु, मङ्कन वुवुस् इङ्घुलुन् इ कित ङ् विर।" ;
+         bk:nomorKlausa 5 ;
+         bk:terjemahan "Alam yang demikian itu akan tampak olehmu, dengan sarana pikiranmu dan pengetahuan sucimu menguasai nafsu. Di sana pada titik hati bertumpuk, pada wajah di tengah-tengah kepala. Demikian penjelasan-Ku kepadamu, hai pemberani." ;
+         bk:transliterasiLatin "manasya darúyate wira, amibhùte na cakûuso, hrêdi ûþhànela dewi, mùrddhanta ri nirikûyate. ika tang pada mangkana, yata katon denta, maka kàraóa manahta, mwang jñànanta jitendriya, ngka ri tumpuk ing hati, ring rahi têngah ning hulu, mangkana wuwus inghulun i kita ng wira." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_6
+bk:Kl1_6 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "यत्त्र यत्रे समुद्धिक्ष्य, कोत्र कोत्रे वलभ्यते, पद्म कुमल सङ् ष्ठानम्, त्रि कोनस्य समीरणम्। कतोन् प्व कङ् पद मङ्कन दे सङ् योगिश्वर, कपङ्गुह् त य ङ्कन देनिर, म्वङ् हन त त्रि कोन मुङ्ग्विंग पुचक् निङ् पद्म, मलि्लङ् त य विह्।" ;
+         bk:nomorKlausa 6 ;
+         bk:terjemahan "Alam yang demikian itu dilihat oleh sang yogi agung. Dijumpailah Beliau di sana olehnya, dan ada segitiga bertempat di puncak bunga padma. Ia bersinar sangat cemerlang." ;
+         bk:transliterasiLatin "yattra yatre samuddhiksya, kotra kotre walabhyate, padma kumala sang ûþhànam, tri konasya samiraóam. katon pwa kang pada mangkana de sang yogiúwara, kapangguh ta ya ngkana denira, mwang hana ta tri kona munggwing pucak ning padma, malilang ta ya wih." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_7
+bk:Kl1_7 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "अधो मुक कुचन्तरे, हृदये कल देहिनम्, दर्शनम् अपिनपिनम्, मुललेत द्वि लभिनम्। ल्विर् निङ् सर्व्व मावक्, सुमुङ्सङ् य, मुङग्व् इ पन्तरनिङ् सुसु कलिह्, प्रत्यक्ष पिनक वित् निङ् देश नपि, विशेष य, तुमयुङ् ल्विर्न्य।" ;
+         bk:nomorKlausa 7 ;
+         bk:terjemahan "Prihalnya segala yang berwujud itu, (posisinya) terbalik, berada di antara kedua susu. Jelasnya itu merupakan sumber dari alam Napi (diagram suci?), sangat utama, keadaanya menggelayut." ;
+         bk:transliterasiLatin "adho muka kucantare, hrêdaye kala dehinam, darúanam apinapinam, mulaleta dwi labhinam. lwir ning sarwwa màwak, sumungsang ya, munggw i pantaraning susu kalih, pratyakûa pinaka wit ning deúa napi, wiúeûa ya, tumayung lwirnya." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_8
+bk:Kl1_8 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "कुचन्तरो महानपि, कृष्ण महा मृतम्, सहृदन्त चरोभिन्न, निलाञ्जन समप्रभम्। इकङ् महानपि, मुङ्ग्विंग हति, महिरेङ् मलित् य, महामृत य, पद तेजन्य लावन् निलाञ्जन, यत दुदुग् तेकेङ् हुलु, अन् सकेहति।" ;
+         bk:nomorKlausa 8 ;
+         bk:terjemahan "Itu Mahànapi ada di hati, berwarna hitam, sangat halus. Itulah air kehidupan yang sangat suci. Cahayanya hitam seperti celak mata, dari hati tembus sampai ke kepala." ;
+         bk:transliterasiLatin "kucantaro mahànapi, kåûóa mahà mrêtam, sahrêdanta carobhinna, nilañjana samaprabham. ikang mahànapi, munggwing hati, mahirêng malit ya, mahàmrêta ya, paða tejanya làwan nilañjana, yata dudug têkeng hulu, an sakehati." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl1_9
+bk:Kl1_9 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "कस्य, पश्यति, देवेश, शिव शून्य निरिन्द्रियः, निर्विकारो महात्मनम्, भुतनञ्जिव एवच। ङ्कन रिङ् नपि, मुङ्गुह् त भटार शिव, सिर त तिनूत् इङ् देवत कभेह्, शून्य सिर, निरिन्द्रिय, किनतयन् त सिर देनिङ् षोडश विकार, उत्तम सिर, ततर् केनेङ् विकार, सिर पिनक जिव निङ् ददि कभेह्," ;
+         bk:nomorKlausa 9 ;
+         bk:terjemahan "Di sana pada diagram suci itu, bersemayamlah Sang Hyang Úiwa. Beliaulah yang dituruti oleh seluruh dewa. Beliau Sunyi (Úùnya). Tanpa nafsu. Tidak terpengaruh oleh enam belas perubahan. Beliau utama. Tidak kena perubahan. Beliau sebagai jiwanya semua ciptaan." ;
+         bk:transliterasiLatin "kasya, paúyati, deweúa, úiwa úùnya nirindriyah, nirwikàro mahàtmanam, bhutanañjiwa ewaca. ngkana ring napi, mungguh ta bhaþàra úiwa, sira ta tinùt ing dewata kabeh, úùnya sira, nirindriya, kinatayan ta sira dening sodaúa wikàra, uttama sira, tatar kêneng wikàra, sira pinaka jiwa ning dadi kabeh," .
+
+
+###  http://contoh.org/bhuwanakosa#Kl2_1
+bk:Kl2_1 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "भूर् भुवः स्वः इति तत्त्वम्, भोक्तिकम् भुवन त्रयम्, रक्त वर्णम अघोरन्तत्, ना भ्यान् न्यसेत् मनीसिभिः। नाहन् तङ् त्रि भुवन, ङ, भूर्, भुवः, स्वः, इन्द्रलोक, ङ, विनरहकेन् दे भटार, रक्त वर्णनिर, अघोर विज सिर, इक तङ् अघोर य त न्यासक्न सङ् पण्डित रिङ् पुसेर्, ओङ् अं नमः।" ;
+         bk:nomorKlausa 1 ;
+         bk:terjemahan "Inilah yang disebut tiga dunia (Tri Bhuwana): bumi (Bhur Loka), angkasa (Bhwah Loka), dan sorga (Swah Loka), yang juga disebut Indra Loka, diajarkan oleh Bhaþàra. Merah warnanya. Inti mantranya Aghora. Itulah Aghora yang ditahtakan oleh sang pendeta di dalam pusar. Ong Ang namah." ;
+         bk:transliterasiLatin "bhùr bhuwah swah iti tattwam, bhoktikam bhuwana trayam, ràkta warónama aghorantat, nà bhyàn nyaset manisibhih. nàhan tang tri bhuwana, nga, bhùr, bhuwah, swah, indraloka, nga, winarahakên de bhatàra, ràkta warónanira, aghora wija sira, ika tang aghora ya ta nyàsakna sang paóðita ring pusêr, ong ang namah." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl2_2
+bk:Kl2_2 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "ब्रह्मा प्रजापति स्यानम्, गायत्री सङ्गुपितम् भवत्, त्रि वर्ण त्रि गणम् ज्ञेयम्, ऐतारि सान्यासेत् वुधः। इ रुहुर् निका, हन त पद महा लोक, ङ, उङ्ग्वन् सङ् यक्ष प्रजापति, गायत्री विज ङ्कान, इकङ् गायत्री तिग वर्णान्य, बाङ्, पुतिह्, इरेङ्, य त्रि गुण, ङ, सत्व, रजः, तमः, कव्रुहन इका, य त न्यासक्न सङ् पण्डित रिङ् वेतेङ्, ओङ् तं नमः।" ;
+         bk:nomorKlausa 2 ;
+         bk:terjemahan "Di atas itu ada alam yang disebut Mahà Loka, tempat bertahtanya Sang Yàkûa Pràjapati. Inti mantranya Gàyatri. Gàyatri mempunyai tiga warna: merah, putih, dan hitam. Itu juga disebut Tri Guóa, yaitu Satwam, Rajah, dan Tamah. Itu patut diketahui oleh sang pendeta dan ditempatkan di dalam perut. Ong Tang namah." ;
+         bk:transliterasiLatin "bràhmà pràjapàti syànam, gàyatri sangûþitam bhawat, tri waróna tri gaóam jñeyam, aitàri sànyàset wudhah. i ruhur nikà, hana ta pada mahà loka, nga, unggwan sang yàkûa pràjapàti, gàyatri wija ngkàna, ikang gàyatri tiga warónanya, bàng, putih, irêng, ya tri guóa, nga, satwa, rajah, tamah, kawruhana ikà, ya ta nyàsakna sang paóðita ring wêtêng, ong tang namah." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl2_3
+bk:Kl2_3 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "पञ्च शुद्ध विचार्य्यन्ते, वैष्णवी विज सम्भवेत्, नीलाञ्जन प्रभा तुल्यम्, हृदिष्ठाम् सन्यसेत् वुधः। इ रुहुर् इक, हन त पद जन लोक, ङ, उङ्ग्वन् सङ् ह्यङ् विष्णु, किनाहनन् त य देनिङ् पञ्च शुद्ध स्वभाव, ल्विर्न्य; अशुद्ध विध्या, स्वभाव, प्रकृति, प्रधान, अव्यक्त, नाहन् तङ् विष्णु भेद लिम क्वेह्न्य, आत्मा य, वैष्णवी विज ङ्कान, महिरेङ् कदि नीलाञ्जन तेजान्य, य त न्यासक्न सङ् पण्डित रिङ् हति। ओङ् सं नमः।" ;
+         bk:nomorKlausa 3 ;
+         bk:terjemahan "Di atasnya itu ada alam yang disebut Jana Loka. Tempat Dewa Wiûóu, yang mempunyai lima wujud suci (Pañca Úuddha): berpengetahuan suci (Aúuddha Widyà), berkepribadian suci (Swabhàwa), asas materi suci (Prakåti), benih materi suci (Pradhàna), dan gaib (Abyakta). Demikianlah Wiûóu, Beliau mempunyai lima wujud yang berbeda. Beliau adalah Àtmà. Inti mantranya Waiûóawi di sana. Hitam seperti tinta pekat cahayanya. Itu ditahtakan oleh sang pendeta di hati. Ong Sang namah." ;
+         bk:transliterasiLatin "pañca úuddha wicàryyante, weûóawi wija sambhawet, nilàñjana pràbha tulyam, hrêdiûþhàm sanyaset wudhah. i ruhur ika, hana ta pada jana loka, nga, unggwan sang hyang wiûóu, kinàhanan ta ya dening pañca úuddha swabhàwa, lwirnya; aúuddha widhya, swabhàwa, prakåti, pradhàna, abhyakta, nàhan tang wiûóu bheda lima kwehnya, àtmà ya, waiûóawi wija ngkàna, mahirêng kadi nilàñjana tejanya, ya ta nyàsakna sang paóðita ring hati. ong sang namah." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl2_4
+bk:Kl2_4 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "नैवज्ञे यम कर्त्तव्यम्, प्रभात्रय मतीन्द्रियम्, अकम्मत्वा महाप्रभम्, पुरुष वक्ष सिस्वतम्। इ रुहुर्न्य, हन त पद तप लोक, ङ, उङ्ग्वन् सङ् ह्यङ् ब्रह्मा, भामदेव विज ङ्कान, अन्तरात्मा कोजरान्य, प्रभा मात्र ल्विर्न्य, तन् किनव्रुहन् देनिङ् इन्द्रिय, तन् पगवे, तन् गिनवे, उङ्ग्वन् सङ् पुरुष य, य त न्यासक्न सङ् पण्डित रिङ् दद। ओङ् बं नमः।" ;
+         bk:nomorKlausa 4 ;
+         bk:terjemahan "Di atas itu ada alam Tapa Loka, tempat bersemayam Sang Hyang Bràhmà. Inti mantranya Bhàmadewa, juga disebut Antaràtmà. Berwujud matra cahaya. Tidak dapat diketahui oleh indera. Tidak berbuat dan tidak dibuat. Itulah tahta Sang Puruûa, ditahtakankan oleh sang pendeta di dalam dada. Ong Bang namah." ;
+         bk:transliterasiLatin "naiwajne yama karttawyam, prabhàtraya matìndriyam, akarmmatwà mahàprabham, puruûa wakûa siswatam. i ruhurnya, hana ta pada tapa loka, nga, unggwan sang hyang bràhmà, bhàmadewa wija ngkàna, antaràtmà kojaranya, prabhà màtra lwirnya, tan kinawruhan dening indriya, tan pagawe, tan ginawe, unggwan sang puruûa ya, ya ta nyàsakna sang paóðita ring ðaða. ong bang namah." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl2_5
+bk:Kl2_5 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "सत्य लोकम् तत रुद्रः, ब्रह्मा जीव मनाधिकम्, ऐश्वर्य्यम् स्वच्छ परमम्, कण्ठ मूले न्यासेद् वुधः। इ रुहुर् निका, हन त पद सत्य लोक, ङ, उङ्ग्वन् सङ् ह्यङ् रुद्र, ईशान विज ङ्कान, परमात्मा य, विशेष य, य ब्रह्मा मन्त्र पद, य जीव अनाधिका, य केश्वर्य्यन्, ङ, मलि्लङ् ल्विर्न्य, य त न्यासक्न सङ् पण्डित रिङ् वित् निङ् गुलु, ओङ् इं नमः।" ;
+         bk:nomorKlausa 5 ;
+         bk:terjemahan "Di atas itu ada alam yang disebut Satya Loka, tempat bersemayamnya Sang Hyang Rudra. Inti mantranya Ìúana, juga disebut Pramàtmà, sangat utama. Beliau adalah alam Bràhmà Mantra. Ia itu jiwa yang suci. Itu pula disebut kemampuan supra. Keadaannya sangat terang benderang. Itu ditahtakankan oleh sang pendeta pada pangkal leher. Ong Ing namah." ;
+         bk:transliterasiLatin "satya lokam tata rudrah, bràhmà jìwa manàdhikam, aiúwaryyam swaccha paramam, kaóþa mule nyàsed wudhah. i ruhur nikà, hana ta pada satya loka, nga, unggwan sang hyang rudra, ìúana wija ngkàna, paramàtmà ya, wiúeûa ya, ya bràhmà mantra pada, ya jìwa anàdhikà, ya keúwaryyan, nga, malilang lwirnya, ya ta nyàsakna sang paóðita ring wit ning gulu, ong ing namah." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl2_6
+bk:Kl2_6 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "अकार निर्म्मलम् गुह्यम्, शिवम् परम् मनामयम्, व्यक्तन् सर्व्वेषु भूतेषु, कण्ठे शिवपुर न्यसेत्। इ रुहुर् इक, हन त पद शिवपुरुष, ङ, उङ्ग्वन् भटार शिव, अकार विज ङ्कान, निरात्मा कोजरान्य, अलि्लङ् शून्य, य शिव ङरनिर, विशेष य, कसुरुदन् सुक दुह्क, व्यापक रिङ् सर्व्व भूत, य त न्यासक्न सङ् पण्डित रिङ् गुलु, ओङ् अं नमः।" ;
+         bk:nomorKlausa 6 ;
+         bk:terjemahan "Di atas itu ada alam Úiwapuruûa, tempat bersemayam Sang Hyang Úiwa. Inti mantranya aksara suci A. Juga disebut Niràtmà, terang benderang Sunyi. Itu disebut Úiwa, sangat unggul. Terhindar dari suka dan duka. Meresapi semua unsur materi. Itu ditahtakan oleh sang pendeta pada leher. Ong Ang namah." ;
+         bk:transliterasiLatin "akàra nirmmalam guhyam, úiwam param manàmàyàm, wyaktan sarwweûu bhùteûu, kaóþe úiwapura nyaset. i ruhur ika, hana ta pada úiwapuruûa, nga, unggwan bhaþàra úiwa, akàra wija ngkàna, niràtmà kojaranya, alilang úùnya, ya úiwa ngaranira, wiúeûa ya, kasurudan suka duhka, wyàpaka ring sarwwa bhùta, ya ta nyàsakna sang paóðita ring gulu, ong ang namah." .
+
+
+###  http://contoh.org/bhuwanakosa#Kl2_7
+bk:Kl2_7 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:aksaraDevanagari "अत्यन्त निर्म्मलम् ञ्चुन्यम्, ध्रुवम् शिवतरन् तथा, तालु कान्ते निरानन्दम्, उकरन् सन्निधा पयेत्। इ रुहुर् निका, हन पद उङ्ग्वन् भटार शिवतर, उकार विज ङ्कान, अत्यन्त निर्म्मल शून्य, नित्य विशेष य, तन् केनेङ् सुक दुह्क, य त न्यासक्न सङ् पण्डित रिङ् लक्लकान्, ओङ् उं नमः।" ;
+         bk:nomorKlausa 7 ;
+         bk:terjemahan "Di atas itu ada alam tempat bersemayamnya Sang Hyang Úiwatara. Inti mantranya aksara suci U. Sangat suci Sunyi. Selalu utama. Tidak terkena suka dan duka. Itu ditahtakan oleh sang pendeta pada langit-langit mulut. Ong Ung namah." ;
+         bk:transliterasiLatin "atyanta nirmmalam ñcunyam, dhruwam úiwataran tathà, tàlu kànte nirànandam, ukaran sannidhà payet. i ruhur nikà, hana pada unggwan bhaþàra úiwatara, ukàra wija ngkàna, atyanta nirmmala úùnya, nitya wiúeûa ya, tan kêneng suka duhka, ya ta nyàsakna sang paóðita ring laklakan, ong ung namah." .
+
+###  http://contoh.org/bhuwanakosa#Kl2_8
+bk:Kl2_8 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:nomorKlausa 8 ;
+         bk:transliterasiLatin "acintya manasanggrêhya, úiwang kewalyam àdhikam, anàdhi maddhyam antaúca lalaþànte niyojayet." ;
+         bk:aksaraDevanagari "अचिन्त्य मनसंगृह्य, शिवाङ्ग केवल्यम् अधिकम्, अनाधि मध्यमम् अन्तश्च ललाटान्ते नियोजयेत्।" ; # CATATAN: Transliterasi otomatis, perlu verifikasi.
+         bk:terjemahan "[Di atas itu ada alam yang disebut alam Kewalya, tempat bersemayamnya Sang Hyang Paramaúiwa. Beliau tanpa awal, tanpa pertengahan, tanpa akhir. Tidak dapat dibayangkan dengan pikiran dan budi. Inti mantranya Ongkàra. Itu ditempatkan oleh sang pendeta pada dahi. Ong Ong namah]." .
+
+###  http://contoh.org/bhuwanakosa#Kl2_9
+bk:Kl2_9 rdf:type owl:NamedIndividual ,
+                  bk:Klausa ;
+         bk:nomorKlausa 9 ;
+         bk:transliterasiLatin "paràmtyantà màthulam, niúcayañca niramàyàm, úiwatamo makarasca, bhrùmadhye sannidhà payet." ;
+         bk:aksaraDevanagari "पराम्त्यन्ता माथुलम्, निश्चयञ्च निरामयाम्, शिवतमो मकरश्च, भ्रूमध्ये सन्निधा पयेत्।" ; # CATATAN: Transliterasi otomatis, perlu verifikasi.
+         bk:terjemahan "[Di atas itu ada alam tempat bersemayamnya Sang Hyang Úiwatamà. Inti mantranya aksara suci M. Beliau sangat utama, sangat stabil, tanpa keinginan, tanpa suka duka. Ditahtakan oleh sang pendeta di antara kedua alis. Ong Mang namah]." .
+
+###  http://contoh.org/bhuwanakosa#Kl2_10
+bk:Kl2_10 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:nomorKlausa 10 ;
+          bk:transliterasiLatin "niûkàlañca niropekûam, kewalyam paramam úiwam, agarbbha janma maraóam, lalàte pari sanyaset." ;
+          bk:aksaraDevanagari "निष्कालञ्च निरोपेक्षम्, केवल्यम् परमम् शिवम्, अगर्भ जन्म मरणम्, ललाटे परि सन्यसेत्।" ; # CATATAN: Transliterasi otomatis, perlu verifikasi.
+          bk:terjemahan "[Di atas itu ada alam yang disebut alam Paramakewalya. Tempat bersemayamnya Sang Hyang Paramaúiwa bersama dengan Sang Hyang Sadaúiwa. Inti mantranya Ongkara. Terlepas dari kelahiran dan kematian. Itu ditempatkan oleh sang pendeta di kepalanya. Ong Ong namah]." .
+
+###  http://contoh.org/bhuwanakosa#Kl2_11
+bk:Kl2_11 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:nomorKlausa 11 ;
+          bk:transliterasiLatin "úiwam atyanta paramam, pade wiúwa nyàsotamam, úiwa sùkûmàdhi madhyàntam, kàpàlàbyantare sthitam." ;
+          bk:aksaraDevanagari "शिवम् अत्यन्त परमम्, पदे विश्व न्यसोत्तमम्, शिव सूक्ष्माधि मध्यान्तम्, कपालाभ्यन्तरे स्थितम्।" ; # CATATAN: Transliterasi otomatis, perlu verifikasi.
+          bk:terjemahan "[Di atas itu ada alam yang patut diajarkan, tempat bersemayamnya Sang Hyang Atyantasùkûma. Inti mantranya Ongkàra. Keadaannya kekal, tidak ada awal, pertengahan, dan akhir. Itu ditahtakan oleh sang pendeta di dalam rongga kepala. Ong Ong namah]." .
+
+###  http://contoh.org/bhuwanakosa#Kl2_12
+bk:Kl2_12 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:nomorKlausa 12 ;
+          bk:transliterasiLatin "úiwa nirbàóa úuddhantam, kàpàla wiware ûþhitam, kàpàlàntati wikûepam, para nirbàóa màcyutam." ;
+          bk:aksaraDevanagari "शिव निर्वाण शुद्धान्तम्, कपाल विवरे ष्ठितम्, कपालान्तति विक्षेपम्, पर निर्वाण माच्युतम्।" ; # CATATAN: Transliterasi otomatis, perlu verifikasi.
+          bk:terjemahan "[Di atas itu ada alam tempat bersemayamnya Sang Hyang Nirbanaúiwa. Inti mantranya Ongkàra, itu disebut Wikûepa. Ditahkan oleh sang pendeta pada lobang kepala. Ong Ong namah]." .
+
+###  http://contoh.org/bhuwanakosa#Kl2_13
+bk:Kl2_13 rdf:type owl:NamedIndividual ,
+                   bk:Klausa ;
+          bk:nomorKlausa 13 ;
+          bk:transliterasiLatin "úiwa paramanirbaóam, úùnya úùnyati úùnyakam, úiwa dwàran nyaset wira, ongkàram sannidhàpayet." ;
+          bk:aksaraDevanagari "शिव परमनिरबाणम्, शून्य शून्याति शून्यकम्, शिव द्वारं न्यसेत् वीर, ॐकारम् सन्निधापयेत्।" ; # CATATAN: Transliterasi otomatis, perlu verifikasi.
+          bk:terjemahan "[Di atas itu ada alam tempat bersemayamnya Sang Hyang Paramanirbanaúiwa. Inti mantranya Ongkàra. Ditahtakan oleh sang pendeta pada ubun-ubun. Ong Ong namah. Demikian penjelasan Bhaþàra tentang alam (pada diri)]." .
+
+
+###  http://contoh.org/bhuwanakosa#TeksBhuwanaKosa
+bk:TeksBhuwanaKosa rdf:type owl:NamedIndividual ,
+                            bk:BhuwanaKosa ;
+                   bk:memilikiBab bk:Bab1 ,
+                                  bk:Bab2 ;
+                   dct:title "Bhuwana Kosa" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
