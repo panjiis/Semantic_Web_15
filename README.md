@@ -1,4 +1,8 @@
 # 📜 Web Streamlit Bhuwana Kosa
+anggota
+- 140810220011	Panji Iman Sujatmiko
+- 140810220009	Muhammad Wildan Kamil
+- 140810220062	drias ameliano kevin david
 
 A Streamlit web-app to explore the **Bhuwana Kosa** manuscript:
 
@@ -112,36 +116,3 @@ ORDER BY ?nomorBab ?nomorKlausa
 
 </details>
 
----
-
-## 🛠 Troubleshooting
-
-| Issue                               | Fix                                                                      |
-| ----------------------------------- | ------------------------------------------------------------------------ |
-| **`ModuleNotFoundError`**           | `pip install streamlit SPARQLWrapper pandas`                             |
-| **No results / endpoint error**     | Confirm Fuseki dataset name & port, check `FUSEKI_ENDPOINT_URL`          |
-| **CORS / network error**            | Run browser and Fuseki on same host or enable CORS in Fuseki config      |
-| **Query returns “Error in prolog”** | File you uploaded to Fuseki is not valid Turtle – convert/validate first |
-
----
-
-## 📂 Project structure
-
-```
-.
-├─ app.py          # Streamlit application
-└─ README.md       # this file
-```
-
----
-
-## 📜 About Bhuwana Kosa
-
-Bhuwana Kosa is a Sanskrit text on cosmology and philosophy.
-This app aims to make its digital ontology easily searchable.
-
----
-
-## 📝 License
-
-Educational / open research use. No warranty.
