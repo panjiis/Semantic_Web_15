@@ -118,7 +118,7 @@ ORDER BY ?nomorBab ?nomorKlausa
 
 ## 🖼️ Tampilan Antarmuka
 
-![Tampilan Pencarian aksara devanagari Bhuwana Kosa](https://drive.google.com/file/d/1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz/view?usp=sharing)
+![Tampilan Pencarian aksara devanagari Bhuwana Kosa](https://drive.google.com/uc?export=view&id=1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz)
 
 ![Tampilan Pencarian transliterasi latin Bhuwana Kosa](https://drive.google.com/file/d/10WTZdMpCWxPGAl8Y6Pt9KtJ4FyUbrAnF/view?usp=drive_link)
 
