@@ -1,87 +1,89 @@
 # 📜 Web Streamlit Bhuwana Kosa
-anggota
-- 140810220011	Panji Iman Sujatmiko
-- 140810220009	Muhammad Wildan Kamil
-- 140810220062	drias ameliano kevin david
 
-A Streamlit web-app to explore the **Bhuwana Kosa** manuscript:
+## 👥 Anggota
 
-* 🔎 **Search Mode** – find clauses by transliteration (Latin), Aksara Devanagari, or Indonesian translation.
-* 🧠 **Manual SPARQL Mode** – write and run any SPARQL query against your Fuseki dataset.
+* 140810220011 Panji Iman Sujatmiko
+* 140810220009 Muhammad Wildan Kamil
+* 140810220062 Drias Ameliano Kevin David
+
+Aplikasi web Streamlit untuk mengeksplorasi naskah **Bhuwana Kosa**:
+
+* 🔎 **Mode Pencarian** – mencari klausa berdasarkan transliterasi (Latin), Aksara Devanagari, atau terjemahan Bahasa Indonesia.
+* 🧠 **Mode SPARQL Manual** – menulis dan menjalankan query SPARQL terhadap dataset Fuseki Anda.
 
 ---
 
-## 🚀 Quick start
+## 🚀 Langkah Cepat
 
 ```bash
-# 1 – install dependencies
+# 1 – instalasi dependensi
 pip install streamlit SPARQLWrapper pandas
 
-# 2 – ensure Fuseki is running
+# 2 – pastikan Fuseki berjalan
 java -jar fuseki-server.jar --update --mem /bhuwana-kosa
 
-# 3 – launch the app
+# 3 – jalankan aplikasi
 streamlit run app.py
 ```
 
-The browser opens at **[http://localhost:8501](http://localhost:8501)**.
-If it doesn’t, open the address manually.
+Browser akan terbuka di **[http://localhost:8501](http://localhost:8501)**.
+Jika tidak terbuka otomatis, buka alamat tersebut secara manual.
 
-> **Important** `app.py` expects a SPARQL endpoint at
+> **Penting** `app.py` mengharapkan endpoint SPARQL di
 > `http://localhost:3030/bhuwana-kosa/sparql`.
-> Edit `FUSEKI_ENDPOINT_URL` in `app.py` if you use a different host, port, or dataset name.
+> Ubah `FUSEKI_ENDPOINT_URL` di `app.py` jika Anda menggunakan host, port, atau nama dataset yang berbeda.
 
 ---
 
-## 🗌 Navigation
+## 🗌 Navigasi
 
-Use the **sidebar** to switch pages:
+Gunakan **sidebar** untuk berpindah halaman:
 
-| Sidebar item               | Purpose                                        |
-| -------------------------- | ---------------------------------------------- |
-| **🔎 Pencarian Kata**      | Keyword search (Latin, Aksara, or Translation) |
-| **🧠 Query SPARQL Manual** | Full manual SPARQL editor                      |
+| Menu Sidebar               | Tujuan                                                |
+| -------------------------- | ----------------------------------------------------- |
+| **🔎 Pencarian Kata**      | Pencarian kata kunci (Latin, Aksara, atau Terjemahan) |
+| **🧠 Query SPARQL Manual** | Editor SPARQL manual penuh                            |
 
 ---
 
-## 🔎 How to search (Pencarian Kata)
+## 🔎 Cara Melakukan Pencarian (Pencarian Kata)
 
-1. Go to **🔎 Pencarian Kata**.
-2. Type a word or phrase in **Latin**, **Aksara Devanagari**, *or* the **Indonesian translation**.
+1. Buka halaman **🔎 Pencarian Kata**.
+2. Ketikkan kata atau frasa dalam **Latin**, **Aksara Devanagari**, *atau* **Terjemahan Bahasa Indonesia**.
 
-   * Examples:
+   * Contoh:
 
      * `sang` (Latin)
      * `संग` (Aksara)
-     * `bumi` (Translation)
-3. Press **Enter**.
-4. Read results: each matching string is highlighted in **orange**.
-5. Click **“Unduh data sebagai CSV”** to save the table (highlight removed).
+     * `bumi` (Terjemahan)
+3. Tekan **Enter**.
+4. Baca hasil: setiap string yang cocok akan ditandai dengan warna **oranye**.
+5. Klik **“Unduh data sebagai CSV”** untuk menyimpan tabel (highlight akan dihapus).
 
-| Column                 | Description                       |
-| ---------------------- | --------------------------------- |
-| Judul Bab (Terjemahan) | Indonesian chapter title          |
-| No. Bab                | Chapter number                    |
-| Judul Bab (Asli)       | Original chapter title (Sanskrit) |
-| No. Klausa             | Clause number                     |
-| Aksara                 | Clause in Devanagari              |
-| Latin                  | Transliteration                   |
-| Terjemahan Klausa      | Indonesian translation            |
+| Kolom                  | Deskripsi                                |
+| ---------------------- | ---------------------------------------- |
+| Judul Bab (Terjemahan) | Judul bab dalam Bahasa Indonesia         |
+| No. Bab                | Nomor bab                                |
+| Judul Bab (Asli)       | Judul bab asli (Sanskrit)                |
+| No. Klausa             | Nomor klausa                             |
+| Aksara                 | Klausa dalam Aksara Devanagari           |
+| Latin                  | Transliterasi                            |
+| Terjemahan Klausa      | Terjemahan klausa dalam Bahasa Indonesia |
 
 ---
 
-## 🧠 How to run manual SPARQL (Query SPARQL Manual)
+## 🧠 Cara Menjalankan SPARQL Manual (Query SPARQL Manual)
 
-1. Open **🧠 Query SPARQL Manual**.
-2. A sample query is pre-filled. Replace or edit it.
-3. Click **“Jalankan Query”**.
-4. Results appear in a table; you can sort/scroll.
-5. Download with **“Unduh hasil sebagai CSV”**.
+1. Buka halaman **🧠 Query SPARQL Manual**.
+2. Sebuah query contoh telah diisi sebelumnya. Ubah atau sunting sesuai kebutuhan.
+3. Klik **“Jalankan Query”**.
+4. Hasil akan muncul dalam bentuk tabel yang dapat diurutkan dan digulir.
+5. Unduh hasil dengan **“Unduh hasil sebagai CSV”**.
 
-### Example queries
+### Contoh Query
 
 <details>
-<summary>List chapter titles (10 rows)</summary>
+<summary>Daftar judul bab (10 baris)</summary>
 
 ```sparql
 PREFIX bk: <http://contoh.org/bhuwanakosa#>
@@ -98,7 +100,7 @@ LIMIT 10
 </details>
 
 <details>
-<summary>Find every clause containing “sang” in transliteration</summary>
+<summary>Temukan semua klausa yang mengandung “sang” dalam transliterasi</summary>
 
 ```sparql
 PREFIX bk: <http://contoh.org/bhuwanakosa#>
@@ -116,13 +118,17 @@ ORDER BY ?nomorBab ?nomorKlausa
 
 </details>
 
+---
+
 ## 🖼️ Tampilan Antarmuka
 
-![Tampilan Pencarian aksara devanagari Bhuwana Kosa](https://drive.google.com/uc?export=view&id=1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz)
+![Tampilan Pencarian Aksara Devanagari Bhuwana Kosa](https://drive.google.com/uc?export=view\&id=1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz)
 
-![Tampilan Pencarian transliterasi latin Bhuwana Kosa](https://drive.google.com/uc?export=view&id=10WTZdMpCWxPGAl8Y6Pt9KtJ4FyUbrAnF)
+![Tampilan Pencarian Transliterasi Latin Bhuwana Kosa](https://drive.google.com/uc?export=view\&id=10WTZdMpCWxPGAl8Y6Pt9KtJ4FyUbrAnF)
 
-![Tampilan Pencarian terjemahaan bahasa indonesia Bhuwana Kosa](https://drive.google.com/uc?export=view&id=1dlXtXdtkNNnpl03ToHAbmS2x9e8tJkfr)
+![Tampilan Pencarian Terjemahan Bahasa Indonesia Bhuwana Kosa](https://drive.google.com/uc?export=view\&id=1dlXtXdtkNNnpl03ToHAbmS2x9e8tJkfr)
 
-![Tampilan input query Bhuwana Kosa](https://drive.google.com/uc?export=view&id=19jFikk0bQScfCD2SYmFdqnmGntbdh3Vf)
+![Tampilan Input Query Bhuwana Kosa](https://drive.google.com/uc?export=view\&id=19jFikk0bQScfCD2SYmFdqnmGntbdh3Vf)
+
+---
 
