@@ -116,3 +116,13 @@ ORDER BY ?nomorBab ?nomorKlausa
 
 </details>
 
+## 🖼️ Tampilan Antarmuka
+
+![Tampilan Pencarian aksara devanagari Bhuwana Kosa](https://drive.google.com/file/d/1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz/view?usp=sharing)
+
+![Tampilan Pencarian transliterasi latin Bhuwana Kosa](https://drive.google.com/file/d/10WTZdMpCWxPGAl8Y6Pt9KtJ4FyUbrAnF/view?usp=drive_link)
+
+![Tampilan Pencarian terjemahaan bahasa indonesia Bhuwana Kosa](https://drive.google.com/file/d/1dlXtXdtkNNnpl03ToHAbmS2x9e8tJkfr/view?usp=drive_link)
+
+![Tampilan input query Bhuwana Kosa](https://drive.google.com/file/d/1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz/view?usp=sharing)
+
