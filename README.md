@@ -120,9 +120,9 @@ ORDER BY ?nomorBab ?nomorKlausa
 
 ![Tampilan Pencarian aksara devanagari Bhuwana Kosa](https://drive.google.com/uc?export=view&id=1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz)
 
-![Tampilan Pencarian transliterasi latin Bhuwana Kosa](https://drive.google.com/file/d/10WTZdMpCWxPGAl8Y6Pt9KtJ4FyUbrAnF/view?usp=drive_link)
+![Tampilan Pencarian transliterasi latin Bhuwana Kosa](https://drive.google.com/uc?export=view&id=10WTZdMpCWxPGAl8Y6Pt9KtJ4FyUbrAnF)
 
-![Tampilan Pencarian terjemahaan bahasa indonesia Bhuwana Kosa](https://drive.google.com/file/d/1dlXtXdtkNNnpl03ToHAbmS2x9e8tJkfr/view?usp=drive_link)
+![Tampilan Pencarian terjemahaan bahasa indonesia Bhuwana Kosa](https://drive.google.com/uc?export=view&id=1dlXtXdtkNNnpl03ToHAbmS2x9e8tJkfr)
 
-![Tampilan input query Bhuwana Kosa](https://drive.google.com/file/d/1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz/view?usp=sharing)
+![Tampilan input query Bhuwana Kosa](https://drive.google.com/uc?export=view&id=1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz)
 
