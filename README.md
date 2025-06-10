@@ -124,5 +124,5 @@ ORDER BY ?nomorBab ?nomorKlausa
 
 ![Tampilan Pencarian terjemahaan bahasa indonesia Bhuwana Kosa](https://drive.google.com/uc?export=view&id=1dlXtXdtkNNnpl03ToHAbmS2x9e8tJkfr)
 
-![Tampilan input query Bhuwana Kosa](https://drive.google.com/uc?export=view&id=1wPjktqKrHUvcpa6cMTidfGYGkB_CIsbz)
+![Tampilan input query Bhuwana Kosa](https://drive.google.com/uc?export=view&id=19jFikk0bQScfCD2SYmFdqnmGntbdh3Vf)
 
